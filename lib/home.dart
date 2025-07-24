@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:ui';
 import 'package:flutter_portfolio/manager/globalmanager.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:flutter_portfolio/experiences.dart';
 import 'profilBanner.dart';
+import 'skills.dart';
 
 const double _Size = 50;
 
@@ -19,7 +21,6 @@ class _HomePageState extends State<HomePage> {
   final ScrollController _scrollController = ScrollController();
 
   void _scrollDown() {
-    // Fait défiler de 300 pixels vers le bas
     _scrollController.animateTo(
       _scrollController.offset + 500,
       duration: Duration(milliseconds: 500),
@@ -68,29 +69,14 @@ class _HomePageState extends State<HomePage> {
           SingleChildScrollView(
             controller: _scrollController,
             child: Column(
-              children: [
-                Profilbanner(),
-                SizedBox(height: 100),
-
-                // Exemple : section 1
-                Container(
-                  height: 600,
-
-                  child: Center(
-                    child: Text(
-                      "À propos",
-                      style: TextStyle(color: Colors.white, fontSize: 32),
-                    ),
-                  ),
-                ),
-              ],
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [Profilbanner(), ExperienceWidget(), SizedBox(height: 100), SkillWidget(), SizedBox(height: 100),],
             ),
           ),
 
           Positioned(
             bottom: 20,
             left: MediaQuery.of(context).size.width * 0.5 - 24,
-
             child: IconButton(
               onPressed: _scrollDown,
               icon: Icon(Icons.keyboard_arrow_down, size: 48),
@@ -111,12 +97,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
 
-      //   Center(
-      //     child: LoadingAnimationWidget.fourRotatingDots(
-      //   color: Colors.white,
-      //   size: _Size,
-
-      // ),),
     );
   }
 }

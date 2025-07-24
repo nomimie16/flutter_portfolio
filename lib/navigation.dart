@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class TopMenu extends StatelessWidget {
    TopMenu({super.key});
 
@@ -9,7 +10,7 @@ class TopMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 60),
+      padding: const EdgeInsets.only(top: 60, bottom: 60, right: 40),
       color: Colors.transparent, 
       child: Row(children: [
 
@@ -24,21 +25,7 @@ class TopMenu extends StatelessWidget {
         
       ),
         const Spacer(),
-        IconButton(
-          icon: theme,
-          onPressed: () {
-            // Toggle between light and dark theme
-            if (theme.icon == Icons.wb_sunny_outlined) {
-              theme = Icon(Icons.nightlight_round, color: Colors.white);
-            } else{
-           theme = Icon(
-              Icons.nightlight_round,
-                  
-              color: Colors.white,
-            );}
-            // Add logic to toggle theme here
-          },
-        ),
+        ThemeToggleButton(),
       ])
     );
   }
@@ -70,6 +57,33 @@ class _HoverMenuItemState extends State<_HoverMenuItem> {
         ),
         child: Text(widget.title),
       ),
+    );
+  }
+}
+
+class ThemeToggleButton extends StatefulWidget {
+  const ThemeToggleButton({super.key});
+
+  @override
+  State<ThemeToggleButton> createState() => _ThemeToggleButtonState();
+}
+
+class _ThemeToggleButtonState extends State<ThemeToggleButton> {
+  bool isDark = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        isDark ? Icons.nightlight_round : Icons.wb_sunny_outlined,
+        color: Colors.white,
+      ),
+      onPressed: () {
+        setState(() {
+          isDark = !isDark;
+          // Ici tu peux aussi changer le thème global si nécessaire
+        });
+      },
     );
   }
 }

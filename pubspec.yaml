@@ -67,6 +67,25 @@ flutter:
     - assets/images/test.png
     - assets/images/img.png
     - assets/images/img2.png
+    - assets/images/avatar.png
+    - assets/images/flutter.png
+    - assets/images/canva.png
+    - assets/images/css.png
+    - assets/images/docker.png
+    - assets/images/figma.png
+    - assets/images/flutter.png
+    - assets/images/github.png
+    - assets/images/html.png
+    - assets/images/java.png
+    - assets/images/javascript.png
+    - assets/images/mysql.png
+    - assets/images/postgresql.png
+    - assets/images/synfony.png
+    - assets/images/node.png
+    - assets/images/typescript.png
+    - assets/images/python.png
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

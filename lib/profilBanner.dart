@@ -34,21 +34,13 @@ class GradientText extends StatelessWidget {
 
 class Profilbanner extends StatefulWidget {
   const Profilbanner({super.key});
+  
 
   @override
   State<Profilbanner> createState() => _ProfilbannerState();
 }
 
 class _ProfilbannerState extends State<Profilbanner> {
-  final ScrollController _scrollController = ScrollController();
-  void _scrollDown() {
-    _scrollController.animateTo(
-      _scrollController.offset + 1500,
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.easeInOut,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return
@@ -58,25 +50,25 @@ class _ProfilbannerState extends State<Profilbanner> {
     //       controller: _scrollController,
     //       child:
     Container(
-      width: MediaQuery.of(context).size.width * 0.7,
+      margin: EdgeInsets.symmetric(horizontal: 300),
+      width: MediaQuery.of(context).size.width ,
       height: MediaQuery.of(context).size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TopMenu(),
           SizedBox(height: 60),
-
           ZoMonoCromeBorder(
-            trackBorderColor: Colors.white,
-            cornerRadius: 70.0,
+            trackBorderColor: GlobalManager.blue,
+            cornerRadius: 100.0,
             borderStyle: ZoMonoCromeBorderStyle.mirror,
-            borderWidth: 3,
+            borderWidth: 8,
             duration: const Duration(seconds: 10),
             child: CircleAvatar(
-                radius: 70,
-                backgroundColor: Colors.transparent,
-                // backgroundImage: AssetImage('../assets/images/test.png'),
-              ),
+              radius: 90,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage('../assets/images/avatar.png'),
+            ),
           ),
 
           // Container(
