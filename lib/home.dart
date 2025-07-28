@@ -3,13 +3,20 @@ import 'dart:ui';
 import 'package:flutter_portfolio/manager/globalmanager.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:flutter_portfolio/experiences.dart';
+import 'package:flutter_portfolio/about.dart';
+import 'package:flutter_portfolio/footer.dart';
+import 'package:flutter_portfolio/navigation.dart';
+
+
+
 import 'profilBanner.dart';
 import 'skills.dart';
 
 const double _Size = 50;
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, required this.onThemeChanged});
+   final ValueChanged<ThemeMode> onThemeChanged;
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -40,13 +47,14 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
-      backgroundColor: Color(0xFF101622),
+      // backgroundColor: Color(0xFF101622),
       body: Stack(
         children: [
           // --------- Image Fond de page ---------
           Positioned.fill(
-            child: Image.asset('assets/images/img.png', fit: BoxFit.cover),
+            child: isDarkMode ? Image.asset('assets/images/img.png', fit: BoxFit.cover) : Image.asset('assets/images/back1.png', fit: BoxFit.cover),
           ),
 
           Positioned(
@@ -70,7 +78,18 @@ class _HomePageState extends State<HomePage> {
             controller: _scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [Profilbanner(), ExperienceWidget(), SizedBox(height: 100), SkillWidget(), SizedBox(height: 100),],
+              children: [
+                TopMenu(onThemeChanged: widget.onThemeChanged,),
+                Profilbanner(),
+                AboutWidget(),
+                SizedBox(height: 80),
+                ExperienceWidget(),
+                SizedBox(height: 80),
+                SkillWidget(),
+                SizedBox(height: 100),
+                FooterWidget(),
+                SizedBox(height: 100),
+                ],
             ),
           ),
 
@@ -80,7 +99,7 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               onPressed: _scrollDown,
               icon: Icon(Icons.keyboard_arrow_down, size: 48),
-              color: Colors.white,
+              // color: Colors.white,
             ),
           ),
           // --------- Chargement ---------

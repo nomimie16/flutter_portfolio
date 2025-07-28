@@ -61,7 +61,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
               decoration: BoxDecoration(
                 border: Border(
                   left: BorderSide(
-                    color: GlobalManager.blue,
+                    color: GlobalManager.blue.withOpacity(0.5),
                     width: 2.0, 
                   ),
                 ),
@@ -73,13 +73,13 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                 mouseCursor: SystemMouseCursors.basic,
                 contentPadding: EdgeInsets.symmetric(
                   horizontal: 20,
-                  vertical: 10,
+                  vertical: 5,
                 ),
                 
                 title: Text(
                   experience['title']!,
                   style: TextStyle(
-                    color: Colors.white,
+                    // color: Colors.white,
                     fontWeight: FontWeight.w600,
                     fontSize: 22,
                   ),
@@ -93,7 +93,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                         Text(
                           experience['subtitle']!,
                           style: TextStyle(
-                            color: const Color.fromARGB(255, 203, 203, 203),
+                            // color: const Color.fromARGB(255, 203, 203, 203),
                             fontSize: 16,
                           ),
                         ),
@@ -110,7 +110,7 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                     Text(
                       experience['description']!,
                       style: TextStyle(
-                        color: const Color(0xFFD6D6D6),
+                        // color: const Color(0xFFD6D6D6),
                         fontWeight: FontWeight.w300,
                         fontSize: 16,
                       ),

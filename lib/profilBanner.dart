@@ -56,7 +56,7 @@ class _ProfilbannerState extends State<Profilbanner> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          TopMenu(),
+          // TopMenu(),
           SizedBox(height: 60),
           ZoMonoCromeBorder(
             trackBorderColor: GlobalManager.blue,
@@ -71,27 +71,7 @@ class _ProfilbannerState extends State<Profilbanner> {
             ),
           ),
 
-          // Container(
-          //   padding: const EdgeInsets.all(3),
-          //   decoration: BoxDecoration(
-          //     shape: BoxShape.circle,
-          //     border: Border.all(color: Colors.blue.withOpacity(0.5), width: 2),
-          //   ),
-          //   child: Container(
-          //     decoration: BoxDecoration(
-          //       shape: BoxShape.circle,
-          //       border: Border.all(
-          //         color: Colors.blue.withOpacity(0.5),
-          //         width: 2,
-          //       ),
-          //     ),
-          //     child: CircleAvatar(
-          //       radius: 70,
-          //       backgroundColor: Colors.transparent,
-          //       // backgroundImage: AssetImage('../assets/images/test.png'),
-          //     ),
-          //   ),
-          // ),
+        
           SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -152,7 +132,7 @@ class _ProfilbannerState extends State<Profilbanner> {
                         "Apprentie Analyste Programmeuse chez POLYEDRE et étudiante en deuxième année de BUT Informatique ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: GlobalManager.grey,
+                          // color: GlobalManager.grey,
                           fontSize: 18,
                           fontWeight: FontWeight.w300,
                         ),

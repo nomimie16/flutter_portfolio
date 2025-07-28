@@ -1,12 +1,27 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
+import 'test.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  ThemeMode _themeMode = ThemeMode.dark;
+  
+  void _toggleTheme(ThemeMode newMode) {
+    setState(() {
+      _themeMode = newMode;
+    });
+  }
 
   // This widget is the root of your application.
   @override
@@ -14,30 +29,67 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Color(0x101622)),
-        
-      ),
-      home: const HomePage(), // Use HomePage as the home widget
+    //     colorScheme: ColorScheme.fromSeed(seedColor: Color(0x101622)),
+    //     textTheme: const TextTheme(
+    //       bodyMedium: TextStyle(color: Colors.white),
+    //       bodyLarge: TextStyle(color: Colors.white),
+    //     ),
+    // ),
+      theme: MyAppThemes.lightTheme,
+      darkTheme: MyAppThemes.darkTheme,
+      themeMode: _themeMode, 
+      home:  HomePage(onThemeChanged: _toggleTheme,), // Use HomePage as the home widget
       
     );
   }
 }
+
+class MyAppColors {
+  static final darkBlue = Color(0xFF5EA1F4);
+  static final lightBlue = Color(0xFF5EA1F4);
+}
+
+
+class MyAppThemes {
+  static final lightTheme = ThemeData(
+    primaryColor: MyAppColors.lightBlue,
+    textTheme: const TextTheme(
+    displayLarge: TextStyle(color: Colors.black),
+      displayMedium: TextStyle(color: Colors.black),
+      displaySmall: TextStyle(color: Colors.black),
+      headlineLarge: TextStyle(color: Colors.black),
+      headlineMedium: TextStyle(color: Colors.black),
+      headlineSmall: TextStyle(color: Colors.black),
+      titleLarge: TextStyle(color: Colors.black),
+      titleMedium: TextStyle(color: Colors.black),
+      titleSmall: TextStyle(color: Colors.black),
+      bodyLarge: TextStyle(color: Colors.black),
+      bodyMedium: TextStyle(color: Colors.black),
+      bodySmall: TextStyle(color: Colors.black),
+      labelLarge: TextStyle(color: Colors.black),
+      labelMedium: TextStyle(color: Colors.black),
+      labelSmall: TextStyle(color: Colors.black),
+
+  ),
+  iconTheme: IconThemeData(
+    color : Colors.black
+  ) ,
+    brightness: Brightness.light,
+  );
+
+  static final darkTheme = ThemeData(
+    primaryColor: MyAppColors.darkBlue,
+    brightness: Brightness.dark,
+    textTheme: const TextTheme(
+    bodyLarge: TextStyle(color: Colors.white),
+    bodyMedium: TextStyle(color: Colors.white),
+    displayLarge: TextStyle(color: Colors.white),
+    titleMedium: TextStyle(color: Colors.white),
+    titleLarge: TextStyle(color: Colors.white)
+
+  ));
+}
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});

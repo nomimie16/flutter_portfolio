@@ -23,6 +23,12 @@ class _SkillWidgetState extends State<SkillWidget> {
     {'text': 'Symfony', 'img': 'assets/images/synfony.png'},
     {'text': 'Canva', 'img': 'assets/images/canva.png'},
     {'text': 'NodeJS', 'img': 'assets/images/node.png'},
+    {'text': 'PostgreSQL', 'img': 'assets/images/mysql.jpg'},
+    {'text': 'VueJS', 'img': 'assets/images/vue.png'},
+    {'text': 'GitHub', 'img': 'assets/images/github.png'},
+    {'text': 'Langage C', 'img': 'assets/images/c.png'},
+
+    
   ];
 
   @override
@@ -85,7 +91,7 @@ class _FakeButton extends StatelessWidget {
         children: [
           Image.asset(img, width: 25, height: 25),
           const SizedBox(width: 8),
-          Text(text, style: TextStyle(color: Colors.white)),
+          Text(text, ),
         ],
       ),
     );
