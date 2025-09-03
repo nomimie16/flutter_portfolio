@@ -38,7 +38,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 1300,
-      margin: EdgeInsets.symmetric(horizontal: 300),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

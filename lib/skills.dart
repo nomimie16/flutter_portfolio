@@ -38,7 +38,6 @@ class _SkillWidgetState extends State<SkillWidget> {
       // decoration: BoxDecoration(
       //   color : GlobalManager.blue,
       // ),
-      margin: EdgeInsets.symmetric(horizontal: 300),
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,7 +59,7 @@ class _SkillWidgetState extends State<SkillWidget> {
             runSpacing: 8,
             children: skills.map((skill) {
               return HoverExtensions(
-                child: _FakeButton(text: skill['text']!, img: skill['img']!),
+                child: FakeButtonImg(text: skill['text']!, img: skill['img']!),
               );
             }).toList(),
           ),
@@ -70,11 +69,11 @@ class _SkillWidgetState extends State<SkillWidget> {
   }
 }
 
-class _FakeButton extends StatelessWidget {
+class FakeButtonImg extends StatelessWidget {
   final String text;
   final String img;
 
-  const _FakeButton({required this.text, required this.img});
+  const FakeButtonImg({required this.text, required this.img});
 
   @override
   Widget build(BuildContext context) {

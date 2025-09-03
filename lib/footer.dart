@@ -53,7 +53,7 @@ class _FooterWidgetState extends State<FooterWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.code, color: GlobalManager.blue),
-            Text(" Construit avec Flutter",
+            Text(" Réalisé avec Flutter",
             //  style: TextStyle(color: Colors.grey,)
              ),
           ],

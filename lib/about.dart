@@ -13,11 +13,9 @@ class _AboutWidgetState extends State<AboutWidget> {
   Widget build(BuildContext context) {
     return Container(
       width: 1300,
-      margin: EdgeInsets.symmetric(horizontal: 300),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 60),
           Text(
             'A propos',
             style: TextStyle(

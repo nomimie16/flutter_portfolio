@@ -86,8 +86,13 @@ class MyAppThemes {
     displayLarge: TextStyle(color: Colors.white),
     titleMedium: TextStyle(color: Colors.white),
     titleLarge: TextStyle(color: Colors.white)
+    
 
-  ));
+  ),
+  iconTheme: IconThemeData(
+    color : Colors.white
+  ) ,
+  );
 }
 
 

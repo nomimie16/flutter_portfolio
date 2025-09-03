@@ -7,6 +7,7 @@ import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:zo_animated_border/zo_animated_border.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:text_typewriter/text_typewriter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GradientText extends StatelessWidget {
   final String text;
@@ -34,7 +35,6 @@ class GradientText extends StatelessWidget {
 
 class Profilbanner extends StatefulWidget {
   const Profilbanner({super.key});
-  
 
   @override
   State<Profilbanner> createState() => _ProfilbannerState();
@@ -50,8 +50,7 @@ class _ProfilbannerState extends State<Profilbanner> {
     //       controller: _scrollController,
     //       child:
     Container(
-      margin: EdgeInsets.symmetric(horizontal: 300),
-      width: MediaQuery.of(context).size.width ,
+      width: MediaQuery.of(context).size.width,
       height: MediaQuery.of(context).size.height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -71,16 +70,15 @@ class _ProfilbannerState extends State<Profilbanner> {
             ),
           ),
 
-        
           SizedBox(height: 50),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _FakeButton(text: 'Frontend'),
+              FakeButton(text: 'Frontend', enabled: false,),
               const SizedBox(width: 12),
-              _FakeButton(text: 'Flutter'),
+              FakeButton(text: 'Flutter', enabled: false,),
               const SizedBox(width: 12),
-              _FakeButton(text: 'Mobile'),
+              FakeButton(text: 'Mobile', enabled: false,),
             ],
           ),
           SizedBox(height: 10),
@@ -165,20 +163,55 @@ class _ProfilbannerState extends State<Profilbanner> {
 }
 
 //Faux  Bouton
-class _FakeButton extends StatelessWidget {
+class FakeButton extends StatelessWidget {
   final String text;
+  final bool enabled;
+  final String? link;
 
-  const _FakeButton({required this.text});
+  FakeButton({required this.text, required this.enabled, this.link});
+
+  // Uri _getLink(String? link) {
+  //   if (link != null) {
+  //     final Uri url = Uri.parse(link);
+  //     return (url);
+  //   }
+  // }
+
+  Uri _getLink(String? link) {
+    return Uri.parse(link!);
+  }
+
+  Future<void> _launchUrl(_url) async {
+    print(enabled);
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 6),
-      decoration: BoxDecoration(
-        color: GlobalManager.blue.withOpacity(0.05),
-        borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: GlobalManager.blue.withOpacity(0.2)),
+    return ElevatedButton(
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(horizontal: 13, vertical: 6),
+        ),
+        backgroundColor: MaterialStateProperty.all(
+          GlobalManager.blue.withOpacity(0.05),
+        ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+            side: BorderSide(color: GlobalManager.blue.withOpacity(0.2)),
+          ),
+        ),
       ),
+
+      onPressed: enabled
+          ? () {
+              launchUrl(_getLink(link));
+            }
+          : null,
+
       child: Text(text, style: TextStyle(color: GlobalManager.blue)),
     );
   }

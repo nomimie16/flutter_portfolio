@@ -24,7 +24,7 @@ class _HoverExtensionsState extends State<HoverExtensions>
       duration: const Duration(milliseconds: 300),
     );
 
-    myAnimation = Tween<double>(begin: 72.0, end: 96.0).animate(controller);
+    myAnimation = Tween<double>(begin: 72.0, end: 90.0).animate(controller);
   }
 
   @override

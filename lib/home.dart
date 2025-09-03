@@ -6,6 +6,8 @@ import 'package:flutter_portfolio/experiences.dart';
 import 'package:flutter_portfolio/about.dart';
 import 'package:flutter_portfolio/footer.dart';
 import 'package:flutter_portfolio/navigation.dart';
+import 'package:flutter_portfolio/project.dart';
+
 
 
 
@@ -76,21 +78,27 @@ class _HomePageState extends State<HomePage> {
           // -------- Acceuil ---------
           SingleChildScrollView(
             controller: _scrollController,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TopMenu(onThemeChanged: widget.onThemeChanged,),
-                Profilbanner(),
-                AboutWidget(),
-                SizedBox(height: 80),
-                ExperienceWidget(),
-                SizedBox(height: 80),
-                SkillWidget(),
-                SizedBox(height: 100),
-                FooterWidget(),
-                SizedBox(height: 100),
-                ],
-            ),
+            child: Padding(
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 300),
+            
+              child : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TopMenu(onThemeChanged: widget.onThemeChanged,),
+                  Profilbanner(),
+                  AboutWidget(),
+                  SizedBox(height: 80),
+                  ExperienceWidget(),
+                  SizedBox(height: 80),
+                  SkillWidget(),
+                  SizedBox(height: 100),
+                  ProjectWidget(),
+                  SizedBox(height: 100),
+                  FooterWidget(),
+                  SizedBox(height: 100),
+                  ],
+              ),
+            )
           ),
 
           Positioned(

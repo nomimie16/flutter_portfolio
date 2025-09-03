@@ -12,7 +12,6 @@ class TopMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 60, bottom: 60, right: 40),
-      margin: EdgeInsets.symmetric(horizontal: 300),
       // width: MediaQuery.of(context).size.width ,
       // height: MediaQuery.of(context).size.height,
       color: Colors.transparent, 
@@ -79,7 +78,7 @@ class ThemeToggleButton extends StatefulWidget {
 }
 
 class _ThemeToggleButtonState extends State<ThemeToggleButton> {
-  // ThemeMode _themeMode = ThemeMode.system;
+  ThemeMode _themeMode = ThemeMode.system;
   bool isDark = false;
 
 
