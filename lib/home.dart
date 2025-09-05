@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage> {
 
           Positioned(
             top: 100,
+            right : 50,
             left: 550,
             child: ImageFiltered(
               imageFilter: ImageFilter.blur(sigmaX: 120, sigmaY: 120),
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
           SingleChildScrollView(
             controller: _scrollController,
             child: Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: 300),
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 360),
             
               child : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

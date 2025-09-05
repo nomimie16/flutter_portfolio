@@ -26,7 +26,7 @@ class _AboutWidgetState extends State<AboutWidget> {
           ),
           SizedBox(height: 40),
           Text(
-            'Je suis une développeuse passionné par la création d\'applications web et mobiles. Mon parcours m\'a permis de travailler sur divers projets, allant de la conception d\'interfaces utilisateur à la mise en place de systèmes backend robustes.',
+            'Je suis une développeuse frontend passionnée par la création d\'interfaces utilisateurs. J\'ai eu l\'occasion de trvailler sur divers projets allant de la création de sites web à la réalisation d\'applications web et mobiles.',
             style: TextStyle(
               // color: Colors.white,
               fontSize: 18,

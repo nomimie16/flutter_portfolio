@@ -51,7 +51,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
             ),
           ),
           SizedBox(height: 40),
-          // Loop through the experiences and create a ListTile for each
           ...widget.experiences.map((experience) {
             return  Material(
             color: Colors.transparent,

@@ -57,18 +57,18 @@ class _ProfilbannerState extends State<Profilbanner> {
         children: [
           // TopMenu(),
           SizedBox(height: 60),
-          ZoMonoCromeBorder(
-            trackBorderColor: GlobalManager.blue,
-            cornerRadius: 100.0,
-            borderStyle: ZoMonoCromeBorderStyle.mirror,
-            borderWidth: 8,
-            duration: const Duration(seconds: 10),
-            child: CircleAvatar(
-              radius: 90,
-              backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('../assets/images/avatar.png'),
-            ),
-          ),
+          // ZoMonoCromeBorder(
+          //   trackBorderColor: GlobalManager.blue,
+          //   cornerRadius: 100.0,
+          //   borderStyle: ZoMonoCromeBorderStyle.mirror,
+          //   borderWidth: 8,
+          //   duration: const Duration(seconds: 10),
+          //   child: CircleAvatar(
+          //     radius: 90,
+          //     backgroundColor: Colors.transparent,
+          //     backgroundImage: AssetImage('../assets/images/avatar.png'),
+          //   ),
+          // ),
 
           SizedBox(height: 50),
           Row(
