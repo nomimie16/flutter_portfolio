@@ -87,7 +87,7 @@ class _ProfilbannerState extends State<Profilbanner> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GradientText(
-                text: "Noémie Lignier ",
+                text: "Noémie Lignier",
                 style: const TextStyle(
                   fontSize: 54,
                   fontWeight: FontWeight.bold,
@@ -110,7 +110,7 @@ class _ProfilbannerState extends State<Profilbanner> {
               Typewriter(
                 [
                   ' Développeuse Frontend Flutter',
-                  ' Apprentie Analyste Programmeuse',
+                  ' Apprentie analyste programmeuse',
                   ' Etudiante en BUT Informatique',
                 ],
                 textstyle: TextStyle(color: GlobalManager.blue, fontSize: 26),
@@ -127,7 +127,7 @@ class _ProfilbannerState extends State<Profilbanner> {
               effects: [FadeEffect(), ScaleEffect()],
               child:
                   Text(
-                        "Apprentie Analyste Programmeuse chez POLYEDRE et étudiante en deuxième année de BUT Informatique ",
+                        "Apprentie analyste programmeuse chez POLYEDRE et étudiante en dernière année de BUT Informatique ",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           // color: GlobalManager.grey,

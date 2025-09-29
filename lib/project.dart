@@ -17,7 +17,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
 @override
   Widget build(BuildContext context) {
     return Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
+        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -28,17 +28,19 @@ class _ProjectWidgetState extends State<ProjectWidget> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(height: 40),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.05),
           Wrap(
-      spacing: 30,
-      runSpacing: 20,
-      children: [
-      Project(title : "Nutrimeal - Application de partage de recettes", img :"assets/images/nutrimeal_green.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation."  ,),
-      Project(title : "Chachoumarket - Logiciel de recherche de chemins", img :"assets/images/chachou.png", description: "Chachoumarket est un logiciel développé en Python. Celui-ci a pour but d'optimiser les chemins des clients d'un supermarché. Les utilsateurs rentrent le plan d'un magasin de grande surface et l'application calcule automatqiuement le parcours le plus simple à emprunter parmi les rayons."  ,),
-      Project(title : "LotoProno - Site web de predictions pour le Loto", img :"assets/images/loto.png", description: "LotoProno est un site web dynamique qui a pour objectif de fournir des prédictions sur le Loto. Ce projet réalisé par équipe de 5 utilise les données officielles du Loto dans le but de fournir des indications sur le prochain tirage. Ce site est développé en PHP avec une base de données PostgreSql."  ,),
-      Project(title : "Spaceapp - Application mobile sur l'astronomie", img :"assets/images/astronaute.jpg", description: "Développée en Flutter, l'application Spaceapp concerne l'astronomie. Cette application mobile a été conçu pour donner des informations sur les planetes et l'espace à ses utilisateurs. Une fois lancée, vous pourrez y retrouver les astres, le descriptif de certaines planetes et bien plus encore. "  ,),
-      Project(title : "Astrophoto - Traitement d'images astronomiques", img :"assets/images/space.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation. "  ,),
-      Project(title : "Portfolio - Site Web retrançant mon parcours", img :"assets/images/portfolio.png", description: "Portfolio Personnel réalisé en Javascript Html et CSS dans le cadre de ma recherche d’alternance. Un site web moderne et responsive mettant en valeur mes compétences et mes projets acquis durant mes années de formation. "  ,),
+            alignment: WrapAlignment.spaceBetween,
+            runAlignment: WrapAlignment.start,
+            spacing: MediaQuery.of(context).size.width * 0.015,
+            runSpacing: MediaQuery.of(context).size.width * 0.02,
+            children: [
+            Project(title : "Nutrimeal - Application de partage de recettes", img :"assets/images/nutrimeal_green.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation."  ,),
+            Project(title : "Chachoumarket - Logiciel de recherche de chemins", img :"assets/images/chachou.png", description: "Chachoumarket est un logiciel développé en Python. Celui-ci a pour but d'optimiser les chemins des clients d'un supermarché. Les utilsateurs rentrent le plan d'un magasin de grande surface et l'application calcule automatqiuement le parcours le plus simple à emprunter parmi les rayons."  ,),
+            Project(title : "LotoProno - Site web de predictions pour le Loto", img :"assets/images/loto.png", description: "LotoProno est un site web dynamique qui a pour objectif de fournir des prédictions sur le Loto. Ce projet réalisé par équipe de 5 utilise les données officielles du Loto dans le but de fournir des indications sur le prochain tirage. Ce site est développé en PHP avec une base de données PostgreSql."  ,),
+            Project(title : "Spaceapp - Application mobile sur l'astronomie", img :"assets/images/astronaute.jpg", description: "Développée en Flutter, l'application Spaceapp concerne l'astronomie. Cette application mobile a été conçu pour donner des informations sur les planetes et l'espace à ses utilisateurs. Une fois lancée, vous pourrez y retrouver les astres, le descriptif de certaines planetes et bien plus encore. "  ,),
+            Project(title : "Astrophoto - Traitement d'images astronomiques", img :"assets/images/space.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation. "  ,),
+            Project(title : "Portfolio - Site interactif retrançant mon parcours", img :"assets/images/portfolio.png", description: "Portfolio Personnel réalisé en Javascript Html et CSS dans le cadre de ma recherche d’alternance. Un site web moderne et responsive mettant en valeur mes compétences et mes projets acquis durant mes années de formation. Et je rajoute du texte pour voir la taille."  ,),
 
      ])]);
   }
@@ -47,16 +49,16 @@ class _ProjectWidgetState extends State<ProjectWidget> {
 
 
 class Project extends StatefulWidget {
-  final double width;
-  final double height;
+  // final double width;
+  // final double height;
   final String title;
   final String description;
   final String img;
 
   const Project({
     super.key,
-    this.width = 300,
-    this.height = 500,
+    // this.width = 300,
+    // this.height = 500,
     required this.title,
     required this.description,
     required this.img,
@@ -68,11 +70,15 @@ class Project extends StatefulWidget {
 
 class _ProjectState extends State<Project> {
   bool hover = false;
+
   
   
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Card.outlined(
       color : Colors.transparent,
       
@@ -92,6 +98,10 @@ class _ProjectState extends State<Project> {
                 onExit: (_) => setState(() => hover = false),
 
       child: Container(
+        constraints: BoxConstraints(
+            minWidth: 230,
+            maxWidth: 370, 
+          ),
           decoration: BoxDecoration(
             gradient: hover ? LinearGradient(
               colors: [
@@ -108,8 +118,6 @@ class _ProjectState extends State<Project> {
           ),  ),        
       child: Padding(
         padding: EdgeInsetsGeometry.all(25),
-        child: SizedBox(
-          width: widget.width,
           child: Column(
             mainAxisAlignment : MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -127,7 +135,8 @@ class _ProjectState extends State<Project> {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                           child: Image.asset(widget.img, width: 50, height: 60),
                         ),
-                        SizedBox(width: 15),
+                        SizedBox(width: screenWidth * 0.01,),
+                        
                         Expanded(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -138,7 +147,7 @@ class _ProjectState extends State<Project> {
                                 softWrap: true,
                                 overflow: TextOverflow.visible,
                                 style: TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 18,
                                   color: hover
                                       ? Color(0xFF5EA1F4)
                                       : Theme.of(
@@ -147,12 +156,12 @@ class _ProjectState extends State<Project> {
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
-                              SizedBox(height: 5),
+                              SizedBox(height: screenHeight * 0.007,),
                               AnimatedContainer(
                                 duration: const Duration(milliseconds: 300),
                                 curve: Curves.easeOut,
-                                height: 4,
-                                width: hover ? 200 : 50,
+                                height: screenHeight*0.004,
+                                width: hover ? screenWidth*0.1 : screenWidth*0.02,
                                 decoration: BoxDecoration(
                                   gradient: LinearGradient(
                                     colors: [
@@ -170,18 +179,19 @@ class _ProjectState extends State<Project> {
                     ),
 
                     // ------------------ Description projet  ----------------------
-                    SizedBox(height: 15),
+                    SizedBox(height: screenHeight* 0.02),
                     Opacity(
                       opacity: 0.7,
                       child: Text(
                         widget.description,
                         softWrap: true,
                         textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 15),
                       ),
                     ),
                     // --------------- Lien git hub -------------------------------
-                    SizedBox(height: 15),
+                    SizedBox(height: screenHeight* 0.02),
+
                   ],
                 ),
               
@@ -194,7 +204,7 @@ class _ProjectState extends State<Project> {
               ),
             ])
           ),
-        ),
+        // ),
       ),),
     );
   }

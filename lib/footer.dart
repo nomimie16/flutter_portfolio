@@ -46,8 +46,20 @@ class _FooterWidgetState extends State<FooterWidget> {
 
 
         SizedBox(height: 20),
-        Text("Fait avec ♥ par Noémie LIGNIER",
-        //  style: TextStyle(color: Colors.grey),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Fait avec ♥ par ",
+            //  style: TextStyle(color: Colors.grey),
+            ),
+            Text(
+              "Noémie Lignier",
+              style: TextStyle(
+                color: GlobalManager.blue,
+                fontSize: 16,
+              ),
+            ),
+          ]
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,

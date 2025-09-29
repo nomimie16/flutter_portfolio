@@ -86,12 +86,12 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
+                    Wrap(
                       children: [
+                   
                         Text(
                           experience['subtitle']!,
                           style: TextStyle(
-                            // color: const Color.fromARGB(255, 203, 203, 203),
                             fontSize: 16,
                           ),
                         ),
@@ -108,7 +108,6 @@ class _ExperienceWidgetState extends State<ExperienceWidget> {
                     Text(
                       experience['description']!,
                       style: TextStyle(
-                        // color: const Color(0xFFD6D6D6),
                         fontWeight: FontWeight.w300,
                         fontSize: 16,
                       ),

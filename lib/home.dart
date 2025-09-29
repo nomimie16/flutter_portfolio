@@ -79,10 +79,11 @@ class _HomePageState extends State<HomePage> {
           // -------- Acceuil ---------
           SingleChildScrollView(
             controller: _scrollController,
-            child: Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: 360),
-            
-              child : Column(
+            child:
+             Padding(
+              padding: EdgeInsetsGeometry.symmetric(horizontal: MediaQuery.of(context).size.width * 0.17),
+              child :
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TopMenu(onThemeChanged: widget.onThemeChanged,),
