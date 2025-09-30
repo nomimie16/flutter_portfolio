@@ -32,7 +32,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
           Wrap(
             alignment: WrapAlignment.spaceBetween,
             runAlignment: WrapAlignment.start,
-            spacing: MediaQuery.of(context).size.width * 0.015,
+            spacing: MediaQuery.of(context).size.width * 0.017,
             runSpacing: MediaQuery.of(context).size.width * 0.02,
             children: [
             Project(title : "Nutrimeal - Application de partage de recettes", img :"assets/images/nutrimeal_green.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation."  ,),
@@ -195,13 +195,14 @@ class _ProjectState extends State<Project> {
                   ],
                 ),
               
-              HoverExtensions(
-                child: FakeButton(
+              // HoverExtensions(
+              //   child: 
+                FakeButton(
                   text: "Github",
                   link: "https://github.com/nomimie16/",
                   enabled: true,
                 ),
-              ),
+              // ),
             ])
           ),
         // ),

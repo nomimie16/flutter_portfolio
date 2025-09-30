@@ -8,7 +8,7 @@ class ExperienceWidget extends StatefulWidget {
       'subtitle': 'Université du littoral côte d\'opale • ',
       'years':'2023 - Aujourd\'hui',
       'description':
-          "Développement web et mobile dans un établissement scolaire qui a pour objectif de faire de ses élèves la liberté.",
+          "Développement et gestion de projets informatiques. Compétences en programmation, bases de données, réseaux et gestion de projet.",
     },
     {
       'title': 'Baccalauréat Général',

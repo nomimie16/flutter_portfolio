@@ -57,18 +57,18 @@ class _ProfilbannerState extends State<Profilbanner> {
         children: [
           // TopMenu(),
           SizedBox(height: 60),
-          // ZoMonoCromeBorder(
-          //   trackBorderColor: GlobalManager.blue,
-          //   cornerRadius: 100.0,
-          //   borderStyle: ZoMonoCromeBorderStyle.mirror,
-          //   borderWidth: 8,
-          //   duration: const Duration(seconds: 10),
-          //   child: CircleAvatar(
-          //     radius: 90,
-          //     backgroundColor: Colors.transparent,
-          //     backgroundImage: AssetImage('../assets/images/avatar.png'),
-          //   ),
-          // ),
+          ZoMonoCromeBorder(
+            trackBorderColor: GlobalManager.blue,
+            cornerRadius: 100.0,
+            borderStyle: ZoMonoCromeBorderStyle.mirror,
+            borderWidth: 8,
+            duration: const Duration(seconds: 10),
+            child: CircleAvatar(
+              radius: 90,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage('assets/images/avatar.png'),
+            ),
+          ),
 
           SizedBox(height: 50),
           Row(
@@ -198,6 +198,7 @@ class FakeButton extends StatelessWidget {
         backgroundColor: MaterialStateProperty.all(
           GlobalManager.blue.withOpacity(0.05),
         ),
+         overlayColor: MaterialStateProperty.all(Colors.transparent), // supprime le gris
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -207,8 +208,8 @@ class FakeButton extends StatelessWidget {
       ),
 
       onPressed: enabled
-          ? () {
-              launchUrl(_getLink(link));
+          ? () { 
+              // launchUrl(_getLink(link));
             }
           : null,
 

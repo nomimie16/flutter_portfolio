@@ -56,18 +56,19 @@ class _HomePageState extends State<HomePage> {
         children: [
           // --------- Image Fond de page ---------
           Positioned.fill(
-            child: isDarkMode ? Image.asset('assets/images/img.png', fit: BoxFit.cover) : Image.asset('assets/images/back1.png', fit: BoxFit.cover),
+            child: isDarkMode ? Image.asset('assets/images/img.png', fit: BoxFit.cover) : Image.asset('assets/images/white.png', fit: BoxFit.cover),
           ),
 
           Positioned(
             top: 100,
-            right : 50,
-            left: 550,
-            child: ImageFiltered(
+            // right : 50,
+            left: MediaQuery.of(context).size.width *0.3,
+            child: 
+            ImageFiltered(
               imageFilter: ImageFilter.blur(sigmaX: 120, sigmaY: 120),
               child: Container(
-                width: 800,
-                height: 300,
+                width:  MediaQuery.of(context).size.width *0.3,
+                height: MediaQuery.of(context).size.height *0.3,
                 decoration: BoxDecoration(
                   color: GlobalManager.violet.withOpacity(0.2),
                   borderRadius: BorderRadius.circular(100),
