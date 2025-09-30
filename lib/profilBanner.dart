@@ -57,18 +57,33 @@ class _ProfilbannerState extends State<Profilbanner> {
         children: [
           // TopMenu(),
           SizedBox(height: 60),
-          ZoMonoCromeBorder(
-            trackBorderColor: GlobalManager.blue,
-            cornerRadius: 100.0,
-            borderStyle: ZoMonoCromeBorderStyle.mirror,
-            borderWidth: 8,
-            duration: const Duration(seconds: 10),
-            child: CircleAvatar(
+          // ZoMonoCromeBorder(
+          //   trackBorderColor: GlobalManager.blue,
+          //   cornerRadius: 100.0,
+          //   borderStyle: ZoMonoCromeBorderStyle.mirror,
+          //   borderWidth: 8,
+          //   duration: const Duration(seconds: 10),
+          //   child: CircleAvatar(
+          //     radius: 90,
+          //     backgroundColor: Colors.transparent,
+          //     backgroundImage: AssetImage('assets/images/avatar.png'),
+          //   ),
+          // ),
+
+          ZoAnimatedGradientBorder(
+            borderRadius: 100,
+            borderThickness: 4,
+            gradientColor: [
+              GlobalManager.pink,
+              GlobalManager.violet,
+              GlobalManager.blue,
+            ],
+            duration: Duration(seconds: 4),
+              child: CircleAvatar(
               radius: 90,
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/images/avatar.png'),
-            ),
-          ),
+              backgroundImage: AssetImage('assets/images/avatar2.png'),  
+          ),),
 
           SizedBox(height: 50),
           Row(
@@ -170,13 +185,6 @@ class FakeButton extends StatelessWidget {
 
   FakeButton({required this.text, required this.enabled, this.link});
 
-  // Uri _getLink(String? link) {
-  //   if (link != null) {
-  //     final Uri url = Uri.parse(link);
-  //     return (url);
-  //   }
-  // }
-
   Uri _getLink(String? link) {
     return Uri.parse(link!);
   }
@@ -195,10 +203,23 @@ class FakeButton extends StatelessWidget {
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(horizontal: 13, vertical: 6),
         ),
-        backgroundColor: MaterialStateProperty.all(
-          GlobalManager.blue.withOpacity(0.05),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (states) {
+            if (states.contains(MaterialState.disabled)) {
+              return GlobalManager.blue.withOpacity(0.05); 
+            }
+            return GlobalManager.blue.withOpacity(0.05); 
+          },
         ),
-         overlayColor: MaterialStateProperty.all(Colors.transparent), // supprime le gris
+        //  foregroundColor: MaterialStateProperty.resolveWith<Color>(
+        //   (states) {
+        //     if (states.contains(MaterialState.disabled)) {
+        //       return GlobalManager.blue; 
+        //     }
+        //     return Colors.white; 
+        //   },
+        // ),
+         overlayColor: MaterialStateProperty.all(Colors.transparent), 
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
@@ -209,7 +230,7 @@ class FakeButton extends StatelessWidget {
 
       onPressed: enabled
           ? () { 
-              // launchUrl(_getLink(link));
+              launchUrl(_getLink(link));
             }
           : null,
 

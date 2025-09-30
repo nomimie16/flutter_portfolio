@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           // --------- Image Fond de page ---------
           Positioned.fill(
-            child: isDarkMode ? Image.asset('assets/images/img.png', fit: BoxFit.cover) : Image.asset('assets/images/white.png', fit: BoxFit.cover),
+            child: isDarkMode ? Image.asset('assets/images/background1.png', fit: BoxFit.cover) : Image.asset('assets/images/white.png', fit: BoxFit.cover),
           ),
 
           Positioned(
@@ -78,30 +78,57 @@ class _HomePageState extends State<HomePage> {
           ),
 
           // -------- Acceuil ---------
+          // Container(
+          // decoration: BoxDecoration(
+          //   color: const Color(0xFF14203A).withOpacity(0.3), // couleur unie
+          // ),
+          // child:
           SingleChildScrollView(
             controller: _scrollController,
-            child:
-             Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: MediaQuery.of(context).size.width * 0.17),
-              child :
-               Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TopMenu(onThemeChanged: widget.onThemeChanged,),
-                  Profilbanner(),
-                  AboutWidget(),
-                  SizedBox(height: 80),
-                  ExperienceWidget(),
-                  SizedBox(height: 80),
-                  SkillWidget(),
-                  SizedBox(height: 100),
-                  ProjectWidget(),
-                  SizedBox(height: 100),
-                  FooterWidget(),
-                  SizedBox(height: 100),
-                  ],
-              ),
-            )
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: MediaQuery.of(context).size.width * 0.17,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TopMenu(onThemeChanged: widget.onThemeChanged),
+                      Profilbanner(),
+                    ],
+                  ),
+                ),
+
+                Container(
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: const Color(0xFF0C111D).withOpacity(0.6), 
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: MediaQuery.of(context).size.width * 0.17,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AboutWidget(),
+                        SizedBox(height: 80),
+                        ExperienceWidget(),
+                        SizedBox(height: 80),
+                        SkillWidget(),
+                        SizedBox(height: 100),
+                        ProjectWidget(),
+                        SizedBox(height: 100),
+                        FooterWidget(),
+                        SizedBox(height: 100),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
 
           Positioned(

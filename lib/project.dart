@@ -38,7 +38,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
             Project(title : "Nutrimeal - Application de partage de recettes", img :"assets/images/nutrimeal_green.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation."  ,),
             Project(title : "Chachoumarket - Logiciel de recherche de chemins", img :"assets/images/chachou.png", description: "Chachoumarket est un logiciel développé en Python. Celui-ci a pour but d'optimiser les chemins des clients d'un supermarché. Les utilsateurs rentrent le plan d'un magasin de grande surface et l'application calcule automatqiuement le parcours le plus simple à emprunter parmi les rayons."  ,),
             Project(title : "LotoProno - Site web de predictions pour le Loto", img :"assets/images/loto.png", description: "LotoProno est un site web dynamique qui a pour objectif de fournir des prédictions sur le Loto. Ce projet réalisé par équipe de 5 utilise les données officielles du Loto dans le but de fournir des indications sur le prochain tirage. Ce site est développé en PHP avec une base de données PostgreSql."  ,),
-            Project(title : "Spaceapp - Application mobile sur l'astronomie", img :"assets/images/astronaute.jpg", description: "Développée en Flutter, l'application Spaceapp concerne l'astronomie. Cette application mobile a été conçu pour donner des informations sur les planetes et l'espace à ses utilisateurs. Une fois lancée, vous pourrez y retrouver les astres, le descriptif de certaines planetes et bien plus encore. "  ,),
+            Project(title : "Spaceapp - Application mobile sur l'astronomie", img :"assets/images/space3.png", description: "Développée en Flutter, l'application Spaceapp concerne l'astronomie. Cette application mobile a été conçu pour donner des informations sur les planetes et l'espace à ses utilisateurs. Une fois lancée, vous pourrez y retrouver les astres, le descriptif de certaines planetes et bien plus encore. "  ,),
             Project(title : "Astrophoto - Traitement d'images astronomiques", img :"assets/images/space.png", description: "Nutrimeal est une application mobile développée en Flutter qui permet de créer et de gérer un carnet de recettes personnalisé. Elle offre la possibilité d’ajouter de nombreux détails à chaque recette, comme le temps de préparation, les valeurs nutritionnelles et une note d’évaluation. "  ,),
             Project(title : "Portfolio - Site interactif retrançant mon parcours", img :"assets/images/portfolio.png", description: "Portfolio Personnel réalisé en Javascript Html et CSS dans le cadre de ma recherche d’alternance. Un site web moderne et responsive mettant en valeur mes compétences et mes projets acquis durant mes années de formation. Et je rajoute du texte pour voir la taille."  ,),
 
@@ -195,14 +195,14 @@ class _ProjectState extends State<Project> {
                   ],
                 ),
               
-              // HoverExtensions(
-              //   child: 
+              HoverExtensions(
+                child: 
                 FakeButton(
                   text: "Github",
                   link: "https://github.com/nomimie16/",
                   enabled: true,
                 ),
-              // ),
+              ),
             ])
           ),
         // ),

@@ -93,9 +93,9 @@ class _ThemeToggleButtonState extends State<ThemeToggleButton> {
       ),
       onPressed: () {
           // widget.onThemeChanged(isDarkMode ? ThemeMode.dark : ThemeMode.light);
-          final newTheme = isDarkMode ? ThemeMode.light : ThemeMode.dark;
-          widget.onThemeChanged(newTheme);
-          print(isDarkMode);
+          // final newTheme = isDarkMode ? ThemeMode.light : ThemeMode.dark;
+          // widget.onThemeChanged(newTheme);
+          // print(isDarkMode);
           
           // isDarkMode ? _toggleTheme(ThemeMode.dark) : _toggleTheme(ThemeMode.light);
           // isDarkMode = !isDarkMode;
