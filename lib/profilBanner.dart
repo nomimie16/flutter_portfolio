@@ -111,9 +111,35 @@ class _ProfilbannerState extends State<Profilbanner> {
                   colors: [GlobalManager.violet, GlobalManager.pink],
                 ),
               ),
-              SizedBox(width: 10),
 
-              // Icon(Icons.stars, size: 40, color: GlobalManager.blue),
+              SizedBox(width: 10),
+              Animate(
+              effects: [
+                  // Supprime FadeEffect si tu veux uniquement l'agrandissement
+                  ScaleEffect(
+                    begin: Offset(1, 1), // taille initiale
+                    end: Offset(0.9, 0.9), // taille finale (50% plus grande)
+                    duration: 1.seconds,
+                    curve: Curves.easeInOut,
+                  ),
+                ],
+                child:
+                    Icon(
+                          Symbols.star_shine,
+                          size: 38,
+                          color: GlobalManager.blue,
+                        )
+                        .animate(
+                          onPlay: (controller) =>
+                              controller.repeat(reverse: true),
+                        )
+                        .scale(
+                          begin: Offset(1, 1),
+                          end: Offset(0.7, 0.7),
+                          duration: 1.seconds,
+                          curve: Curves.easeInOut,
+                        )
+              )
             ],
           ),
 
@@ -138,24 +164,25 @@ class _ProfilbannerState extends State<Profilbanner> {
           SizedBox(height: 30),
           Container(
             width: MediaQuery.of(context).size.width * 0.3,
-            child: Animate(
-              effects: [FadeEffect(), ScaleEffect()],
-              child:
-                  Text(
-                        "Apprentie analyste programmeuse chez POLYEDRE et étudiante en dernière année de BUT Informatique ",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          // color: GlobalManager.grey,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      )
-                      .animate(
-                        onPlay: (controller) =>
-                            controller.repeat(reverse: true),
-                      )
-                      .moveY(begin: 0, end: -10, duration: 1.3.seconds),
-            ),
+            child:
+            //  Animate(
+            //   effects: [FadeEffect(), ScaleEffect()],
+            //   child:
+            Text(
+                  "Apprentie analyste programmeuse chez POLYEDRE et étudiante en dernière année de BUT Informatique ",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    // color: GlobalManager.grey,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w300,
+                  ),
+                )
+            //           .animate(
+            //             onPlay: (controller) =>
+            //                 controller.repeat(reverse: true),
+            //           )
+            //           .moveY(begin: 0, end: -10, duration: 1.3.seconds),
+            // ),
           ),
         ],
       ),

@@ -22,7 +22,7 @@ class ExperienceWidget extends StatefulWidget {
       'subtitle': 'College Le Trion • ',
       'years':'2016 - 2020',
       'description':
-          "Diplome avec mention très bien lié au spécialités Informatqiue et Mathématiques. Option Euro Anglais au cours d'1 an.",
+          "Obtention du Diplôme du Brevet avec Mention Très Bien et aevc option Latin.",
     },
    
   ];

@@ -50,23 +50,24 @@ class _FooterWidgetState extends State<FooterWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Fait avec ♥ par ",
-            //  style: TextStyle(color: Colors.grey),
+               style: TextStyle( fontSize: 13)
             ),
             Text(
               "Noémie Lignier",
               style: TextStyle(
                 color: GlobalManager.blue,
-                fontSize: 16,
+                fontSize: 13,
               ),
             ),
           ]
         ),
+        // Text("©2025 - Tout droits réservés", style: TextStyle( fontSize: 13)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.code, color: GlobalManager.blue),
             Text(" Réalisé avec Flutter",
-            //  style: TextStyle(color: Colors.grey,)
+             style: TextStyle( fontSize: 13)
              ),
           ],
         ),

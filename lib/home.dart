@@ -59,6 +59,17 @@ class _HomePageState extends State<HomePage> {
             child: isDarkMode ? Image.asset('assets/images/background1.png', fit: BoxFit.cover) : Image.asset('assets/images/white.png', fit: BoxFit.cover),
           ),
 
+          // --------------------- Menu ----------------
+           Positioned(
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width * 0.17,
+              ),
+
+              child: TopMenu(onThemeChanged: widget.onThemeChanged),
+            ),
+          ),
+
           Positioned(
             top: 100,
             // right : 50,
@@ -77,30 +88,23 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
 
-          // -------- Acceuil ---------
-          // Container(
-          // decoration: BoxDecoration(
-          //   color: const Color(0xFF14203A).withOpacity(0.3), // couleur unie
-          // ),
-          // child:
+          // ----------------------------- Acceuil --------------------------------------------
+
           SingleChildScrollView(
             controller: _scrollController,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: MediaQuery.of(context).size.width * 0.17,
+                  padding: EdgeInsets.only(
+                    left : MediaQuery.of(context).size.width * 0.17,
+                    right: MediaQuery.of(context).size.width * 0.17,
+                    top :MediaQuery.of(context).size.width * 0.1
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TopMenu(onThemeChanged: widget.onThemeChanged),
-                      Profilbanner(),
-                    ],
-                  ),
+                  child: Profilbanner(),
                 ),
 
+                // ------------------------------ Contenu page quand tu scroll -----------------------------------
                 Container(
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -122,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                         ProjectWidget(),
                         SizedBox(height: 100),
                         FooterWidget(),
-                        SizedBox(height: 100),
+                        SizedBox(height: 30),
                       ],
                     ),
                   ),
@@ -137,7 +141,6 @@ class _HomePageState extends State<HomePage> {
             child: IconButton(
               onPressed: _scrollDown,
               icon: Icon(Icons.keyboard_arrow_down, size: 48),
-              // color: Colors.white,
             ),
           ),
           // --------- Chargement ---------
