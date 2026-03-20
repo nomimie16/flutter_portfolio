@@ -169,11 +169,11 @@ class _ProfilbannerState extends State<Profilbanner> {
             //   effects: [FadeEffect(), ScaleEffect()],
             //   child:
             Text(
-                  "Apprentie analyste programmeuse chez POLYEDRE et étudiante en dernière année de BUT Informatique ",
+                  "Apprentie Développeuse et étudiante en dernière année de BUT Informatique. A la recherche d'une alternance pour la rentrée 2026.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     // color: GlobalManager.grey,
-                    fontSize: 18,
+                    fontSize: 20,
                     fontWeight: FontWeight.w300,
                   ),
                 )

@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
            Positioned(
             child: Padding(
               padding: EdgeInsets.symmetric(
-                horizontal: MediaQuery.of(context).size.width * 0.17,
+                horizontal: MediaQuery.of(context).size.width * 0.13,
               ),
 
               child: TopMenu(onThemeChanged: widget.onThemeChanged),
@@ -93,12 +93,12 @@ class _HomePageState extends State<HomePage> {
           SingleChildScrollView(
             controller: _scrollController,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                    left : MediaQuery.of(context).size.width * 0.17,
-                    right: MediaQuery.of(context).size.width * 0.17,
+                    left : MediaQuery.of(context).size.width * 0.13,
+                    right: MediaQuery.of(context).size.width * 0.13,
                     top :MediaQuery.of(context).size.width * 0.1
                   ),
                   child: Profilbanner(),
@@ -112,10 +112,10 @@ class _HomePageState extends State<HomePage> {
                   ),
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                      horizontal: MediaQuery.of(context).size.width * 0.17,
+                      horizontal: MediaQuery.of(context).size.width * 0.13,
                     ),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         AboutWidget(),
                         SizedBox(height: 80),

@@ -34,35 +34,35 @@ class _SkillWidgetState extends State<SkillWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 1300,
-      // decoration: BoxDecoration(
-      //   color : GlobalManager.blue,
-      // ),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 60),
           Text(
             'Skills',
             style: TextStyle(
-              color: GlobalManager.blue,
-              fontSize: 34,
+              fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
           ),
+           Text(
+            'Skills',
+            style: TextStyle(
+              fontSize: 18,
+              color: GlobalManager.opacitylow
+            ),
+          ),
           SizedBox(height: 40),
-
+          SizedBox(
+            width: 1000, 
+            child:
           Wrap(
             direction: Axis.horizontal,
-            spacing: 8,
-            runSpacing: 8,
             children: skills.map((skill) {
               return HoverExtensions(
                 child: FakeButtonImg(text: skill['text']!, img: skill['img']!),
               );
             }).toList(),
-          ),
+          ),)
         ],
       ),
     );

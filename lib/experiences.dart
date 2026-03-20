@@ -1,28 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/container.dart';
 import 'package:flutter_portfolio/manager/globalmanager.dart';
 
 class ExperienceWidget extends StatefulWidget {
   final List<Map<String, String>> experiences = [
     {
       'title': 'BUT Informatique',
-      'subtitle': 'Université du littoral côte d\'opale • ',
+      'subtitle': 'Université du Littoral Côte d\'Opale • ',
       'years':'2023 - Aujourd\'hui',
       'description':
-          "Développement et gestion de projets informatiques. Compétences en programmation, bases de données, réseaux et gestion de projet.",
+          "Compétences en programmation, bases de données, réseaux et gestion de projet. \nParcours : Réalisation d'applications, conception et développement \nTOEIC Niveau B2 | 795 points",
     },
     {
       'title': 'Baccalauréat Général',
       'subtitle': 'Lycée Giraux Sannier • ',
       'years':'2020 - 2023',
       'description':
-          "Diplome avec mention très bien lié au spécialités Informatqiue et Mathématiques. Option Euro Anglais au cours d'1 an.",
+          "Spécialités Numérique Science de l'Informatique et Mathématiques. \nOption Euro Anglais pendant 1 an. \nMention très bien | LV2 Allemand",
     },
      {
       'title': 'Diplome National du Brevet',
       'subtitle': 'College Le Trion • ',
       'years':'2016 - 2020',
       'description':
-          "Obtention du Diplôme du Brevet avec Mention Très Bien et aevc option Latin.",
+          " Mention Très Bien | LV2 Allemand \n Option Latin pendant 3 ans.",
     },
    
   ];
@@ -34,93 +35,96 @@ class ExperienceWidget extends StatefulWidget {
 }
 
 class _ExperienceWidgetState extends State<ExperienceWidget> {
+  int? hover;
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1300,
+    return  Container(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 60),
           Text(
-            'Parcours',
+            'Parcours académique',
             style: TextStyle(
-              color: GlobalManager.blue,
-              fontSize: 34,
+              fontSize: 40,
               fontWeight: FontWeight.bold,
             ),
           ),
+          Text(
+            'Parcours académique',
+            style: TextStyle(
+              fontSize: 18,
+              color: GlobalManager.opacitylow
+            ),
+          ),
           SizedBox(height: 40),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.center,
+          //   crossAxisAlignment: CrossAxisAlignment.center,
+          //   children: [
+          SizedBox(
+            width: 1000,
+            height: 650,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
           ...widget.experiences.map((experience) {
-            return  Material(
-            color: Colors.transparent,
-            child: Container(
-              margin: EdgeInsets.only(bottom: 40),
-              decoration: BoxDecoration(
-                border: Border(
-                  left: BorderSide(
-                    color: GlobalManager.blue.withOpacity(0.5),
-                    width: 2.0, 
-                  ),
-                ),
-              ),
-              child: ListTile(
-                enabled: true,
-                hoverColor: GlobalManager.blue.withOpacity(0.1),
-                onTap: () {},
-                mouseCursor: SystemMouseCursors.basic,
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 5,
-                ),
-                
-                title: Text(
-                  experience['title']!,
-                  style: TextStyle(
-                    // color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 22,
-                  ),
-                ),
-                subtitle: Column(
+            int index = widget.experiences.indexOf(experience);
+           
+            return PortfolioInfoCard(
+              width: 800,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+              children: [
+                Column(
                   mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                Text(
+                experience['title']!,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(height: 3),
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Wrap(
                       children: [
-                   
                         Text(
                           experience['subtitle']!,
                           style: TextStyle(
+                            color: GlobalManager.blue,
                             fontSize: 16,
                           ),
                         ),
                         Text(
                           experience ['years']!,
                           style: TextStyle(
-                            color: GlobalManager.blue,
+                            color: GlobalManager.opacitylow,
                             fontSize: 16,
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 15),
                     Text(
                       experience['description']!,
                       style: TextStyle(
                         fontWeight: FontWeight.w300,
+                        color: GlobalManager.opacitylow,
                         fontSize: 16,
                       ),
                     ),
-                  ],
-                ),
-              ),
-            ),
-            );
+                  ],)]
+                )]);
+  }),
+        ]),
+            )]));
           }
-          ),
-        ],
-      ),
-    );
-  }
 }

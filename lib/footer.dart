@@ -28,9 +28,10 @@ class _FooterWidgetState extends State<FooterWidget> {
       children: [
         Container(
           width: 150,
-        child : Row(
+          child : Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+
             IconButton(
               onPressed:(){  _launchUrl(github);},
               icon: FaIcon(FontAwesomeIcons.github),),

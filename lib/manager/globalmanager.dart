@@ -9,4 +9,5 @@ class GlobalManager {
   static Color pink = Color(0xFFD34DBD);
   static Color blue = Color(0xFF5EA1F4);
   static Color grey = Color.fromARGB(255, 227, 228, 230);
+  static Color opacitylow =  const Color(0xA6FFFFFF);
 }

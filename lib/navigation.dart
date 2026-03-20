@@ -16,7 +16,6 @@ class TopMenu extends StatelessWidget {
       // height: MediaQuery.of(context).size.height,
       color: Colors.transparent, 
       child: Row(children: [
-
        Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: menuItems.map((title) {
@@ -25,7 +24,6 @@ class TopMenu extends StatelessWidget {
             child: _HoverMenuItem(title: title),
           );
         }).toList(),
-        
       ),
         const Spacer(),
         ThemeToggleButton(onThemeChanged: onThemeChanged,),
